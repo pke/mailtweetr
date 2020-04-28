@@ -11,6 +11,8 @@ globals:
 parserOptions:
   ecmaVersion: 2018
 rules:
+  no-var: error
+  prefer-const: warn
   no-trailing-spaces: error
   no-irregular-whitespace: error
   indent:
