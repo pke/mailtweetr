@@ -5,10 +5,17 @@
   "main": "index.js",
   "scripts": {
     "dev-test": "now dev",
+    "test": "mochista --watch",
     "lint": "eslint",
     "postinstall": "node ./bin/webhook.js"
   },
-  "keywords": [],
+  "keywords": [
+    "twitter",
+    "trello",
+    "API",
+    "webhook",
+    "tweet"
+  ],
   "author": "Philipp Kursawe <phil.kursawe@gmail.com> (https://pke.fyi/)",
   "license": "MIT",
   "dependencies": {
@@ -18,6 +25,7 @@
   },
   "devDependencies": {
     "chai": "4.2.0",
+    "eslint": "6.8.0",
     "mochista": "0.22.0"
   }
 }
