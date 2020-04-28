@@ -1,11 +1,9 @@
 const crypto = require("crypto")
 
 module.exports = function validateRequest(request, secret, callbackURL) {
-  var base64Digest = function (s) {
-    return crypto.createHmac('SHA1', secret).update(s).digest('base64')
-  }
-  var content = JSON.stringify(request.body) + callbackURL
-  var doubleHash = base64Digest(content)
-  var headerHash = request.headers['x-trello-webhook']
+  const content = JSON.stringify(request.body) + callbackURL
+  const doubleHash = crypto.createHmac("SHA1", secret).update(content).digest("base64")
+  const headerHash = request.headers["x-trello-webhook"]
+  console.log("callbackURL", callbackURL, "validateRequest", headerHash, doubleHash)
   return doubleHash == headerHash
 }
