@@ -1,5 +1,9 @@
 # TweetMailr
 
+## TL;DR
+
+Create a tweet from a mail sent to a trello board.
+
 ## Inspiration
 
 The best mobile phone system to date, Windows Phone 8.1, is not supported by #
@@ -23,8 +27,7 @@ with media content types become tweet media (up to 4 images or 1 gif).
 2. Lambda splits trello card title + descriptions to tweets
 3. Card attachments with media content-type are uploaded as media
 4. Tweets are posted
-5. Card is moved to "Done" list or "Error" list depending on the success of
-   tweets
+5. Card is moved to "Done" or "Error" list depending on tweeting results
 
 ## License
 
