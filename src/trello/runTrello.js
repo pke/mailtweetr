@@ -1,14 +1,17 @@
 const https = require("https")
 
-async function request({ method, hostname, path, headers }, data) {
+async function request(options, data) {
   return new Promise(function(resolve, reject) {
-    const request = https.request({
-      method,
-      hostname,
-      path,
-      headers
-    }, function(response) {
-      response.on("data", function(body) {
+    console.log("request", options)
+    const request = https.request(options, function(response) {
+      let body = ""
+      response.on("data", function(data) {
+        body += data
+      })
+      response.on("end", function(data) {
+        if (data) {
+          body += data
+        }
         resolve({
           request,
           response,
@@ -22,7 +25,7 @@ async function request({ method, hostname, path, headers }, data) {
   })
 }
 
-module.exports = async function(method, path, data) {
+module.exports = async function([method, path, data]) {
   const queryDelimiter = path.indexOf("?") === -1 ? "?" : "&"
   path += `${queryDelimiter}key=${process.env.TRELLO_API_KEY}&token=${process.env.TRELLO_API_TOKEN}`
   return request({
