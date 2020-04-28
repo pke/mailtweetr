@@ -1,7 +1,7 @@
 {
-  "name": "tweetmailr",
+  "name": "mailtweetr",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mail to tweet",
   "main": "index.js",
   "scripts": {
     "dev-test": "now dev",
