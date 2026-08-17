@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev-test": "now dev",
-    "test": "mochista --watch",
+    "test": "mocha \"src/**/*.test.js\"",
     "lint": "eslint",
     "postinstall": "node ./bin/webhook.js"
   },
@@ -20,12 +20,15 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "8.2.0",
-    "twitter-lite": "0.9.4",
+    "twitter-lite": "1.1.0",
     "twitter-text": "3.1.0"
   },
   "devDependencies": {
-    "chai": "4.2.0",
-    "eslint": "6.8.0",
-    "mochista": "0.22.0"
+    "chai": "4.5.0",
+    "eslint": "8.57.1",
+    "mocha": "11.8.0"
+  },
+  "overrides": {
+    "node-fetch": "2.6.7"
   }
 }
